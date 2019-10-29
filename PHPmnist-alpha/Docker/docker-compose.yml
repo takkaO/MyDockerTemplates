@@ -1,0 +1,8 @@
+PHPmnist:
+  image: php-tf
+  container_name: "php_mnist"
+  tty: true
+  ports:
+    - "8080:80"
+  volumes:
+    - C:/Users/csel-pc05/Desktop/html:/var/www/html

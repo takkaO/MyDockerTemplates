@@ -1,0 +1,9 @@
+CGI-Server:
+  image: cgi-docker
+  container_name: "sv-cgi"
+  tty: true
+  ports:
+    - "8080:80"
+  volumes:
+    - C:/Users/csel-pc05/Desktop/DT-apcp/html:/var/www/html
+    - C:/Users/csel-pc05/Desktop/DT-apcp/cgi-bin:/usr/lib/cgi-bin

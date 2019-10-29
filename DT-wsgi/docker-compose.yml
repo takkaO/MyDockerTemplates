@@ -1,0 +1,8 @@
+WSGI-Server:
+  image: wsgi-docker
+  container_name: "sv-wsgi"
+  tty: true
+  ports:
+    - "8080:80"
+  volumes:
+    - C:/Users/csel-pc05/Desktop/DT-wsgi/html:/var/www/html

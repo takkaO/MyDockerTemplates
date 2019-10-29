@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> hogehoge </title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../templates/js/test.js"></script>
+</head>
+<body>
+	<img id="hogeimg" style="width: 250px" src="../imgs/tea.jpg">
+
+	<form action="/hoge/" method="post">
+		<button id="predict_btn" type="button">Predict !</button>
+	</form>
+
+	<input type="text" id="input-text" placeholder="Please input text">
+	<button id="button">Change text</button>
+
+	<script>
+		function atest() {
+			$("#button").click(function () {
+				$.ajax({
+					type: 'POST',
+					url: '/test_wsgi/postText',
+					data: JSON.stringify({"text":"hogehugapiyo"}),
+					contentType: 'application/json',
+				}).then(
+					function (data) {
+						console.log(data);
+					},
+					function () {
+						console.log("ERROR");
+					}
+				);
+				return false;
+			});
+		}
+		atest();
+		//var test = '{{test_var}}'
+		//console.log(test)
+		//console.log(typeof(test));
+		//document.getElementById("hogeimg").src = "data:image/jpeg;base64," + test;
+	</script>
+</body>
+
+</html>
